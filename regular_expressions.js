@@ -49,21 +49,21 @@ console.log(grab_all_nomor_ktp("please confirm your identity: XXX-XX-1422"))
   // return []
 
 
-// // Obfuscate all of the nomor KTP in a string. Example: XXX-XX-4430.
-// function hide_all_nomor_ktp(string) {
-//
-// }
-//
-// console.log("hide_all_nomor_ktp obfuscates any nomor KTP in the string")
-// console.log(hide_all_nomor_ktp("234-60-1422, 350-80-0744, 013-60-8762"))
-//
-// // "XXX-XX-1422, XXX-XX-0744, XXX-XX-8762"
-//
-// console.log("hide_all_nomor_ktp does not alter a string without nomor KTP in it")
-// var string = "please confirm your identity: XXX-XX-1422"
-// console.log(hide_all_nomor_ktp(string) == string)
-//
-//
+// Obfuscate all of the nomor KTP in a string. Example: XXX-XX-4430.
+function hide_all_nomor_ktp(string) {
+   return string.replace(/\d{3,3}-/g,"XXX-").replace(/\d{2,2}-/g,"XX-")
+}
+
+console.log("hide_all_nomor_ktp obfuscates any nomor KTP in the string")
+console.log(hide_all_nomor_ktp("234-60-1422, 350-80-0744, 013-60-8762"))
+
+// "XXX-XX-1422, XXX-XX-0744, XXX-XX-8762"
+
+console.log("hide_all_nomor_ktp does not alter a string without nomor KTP in it")
+var string = "please confirm your identity: XXX-XX-1422"
+console.log(hide_all_nomor_ktp(string) == string)
+
+
 // // Ensure all of the Social Security numbers use dashes for delimiters.
 // // Example: 480.01.4430 and 480014430 would both be 480-01-4430.
 // function format_nomor(string) {
