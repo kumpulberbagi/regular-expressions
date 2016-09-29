@@ -1,7 +1,7 @@
 "use strict"
 // Determine whether a string contains a nomor KTP
 function has_ktp(string) {
-  var cek = /\d{2,4}-\d{2,4}-\d{2,4}/g
+  var cek = /\d{2,4}-\d{2,4}-\d{2,4}/
   return cek.test(string)
   }
 
@@ -11,32 +11,42 @@ console.log(has_ktp("please don't share this: 234-60-1422") == true)
 console.log("has_ktp returns false if it doesn't have a nomor KTP")
 console.log(has_ktp("please confirm your identity: XXX-XX-1422") == false)
 
-// // Return the Social Security number from a string.
-// function grab_ktp(string) {
-//
-// }
-//
-// console.log("grab_ktp returns an nomor KTP if the string has an nomor KTP")
-// console.log(grab_ktp("please don't share this: 234-60-1422") == "234-60-1422")
-//
-// console.log("grab_ssn returns nil if it doesn't have a nomor KTP")
-// console.log(grab_ktp("please confirm your identity: XXX-XX-1422") == null)
-//
-// // Return all of the Social Security numbers from a string.
-// function grab_all_nomor_ktp(string) {
-//
-// }
-//
-// console.log("grab_all_nomor_ktp returns all nomor KTP if the string has any nomor KTP")
-// console.log(grab_all_nomor_ktp("234-60-1422, 350-80-0744, 013-60-8762"))
-//
-// // return ["234-60-1422", "350-80-0744", "013-60-8762"])
-//
-// console.log("grab_all_nomor_ktp returns an empty Array if it doesn't have any nomor KTP")
-// console.log(grab_all_nomor_ktp("please confirm your identity: XXX-XX-1422"))
-//   // return []
-//
-//
+// Return the Social Security number from a string.
+function grab_ktp(string) {
+  var cek = /\d{2,4}-\d{2,4}-\d{2,4}/
+  if (has_ktp(string) == true){
+    return string.match(/\d{2,4}-\d{2,4}-\d{2,4}/)
+  } else {
+    return null
+  }
+}
+
+console.log("grab_ktp returns an nomor KTP if the string has an nomor KTP")
+console.log(grab_ktp("please don't share this: 234-60-1422") == "234-60-1422")
+
+console.log("grab_ssn returns nil if it doesn't have a nomor KTP")
+console.log(grab_ktp("please confirm your identity: XXX-XX-1422") == null)
+
+// Return all of the Social Security numbers from a string.
+function grab_all_nomor_ktp(string) {
+  // var cek = /\d{2,4}-\d{2,4}-\d{2,4}/
+  var all = [];
+  if (cek.test(string) == true){
+    return string.match(/\d{2,4}-\d{2,4}-\d{2,4}/)
+  } else {
+    return all
+}
+
+console.log("grab_all_nomor_ktp returns all nomor KTP if the string has any nomor KTP")
+console.log(grab_all_nomor_ktp("234-60-1422, 350-80-0744, 013-60-8762"))
+
+// return ["234-60-1422", "350-80-0744", "013-60-8762"])
+
+console.log("grab_all_nomor_ktp returns an empty Array if it doesn't have any nomor KTP")
+console.log(grab_all_nomor_ktp("please confirm your identity: XXX-XX-1422"))
+  // return []
+
+
 // // Obfuscate all of the nomor KTP in a string. Example: XXX-XX-4430.
 // function hide_all_nomor_ktp(string) {
 //
