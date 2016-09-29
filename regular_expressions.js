@@ -29,7 +29,7 @@ console.log(grab_ktp("please confirm your identity: XXX-XX-1422") == null)
 
 // Return all of the Social Security numbers from a string.
 function grab_all_nomor_ktp(string) {
-  // var cek = /\d{2,4}-\d{2,4}-\d{2,4}/
+  var cek = /\d{2,4}-\d{2,4}-\d{2,4}/
   var all = [];
   if (cek.test(string) == true){
     return string.match(/\d{2,4}-\d{2,4}-\d{2,4}/)
