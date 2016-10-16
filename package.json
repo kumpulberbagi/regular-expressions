@@ -1,0 +1,19 @@
+{
+  "name": "regular-expressions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "regular_expressions.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blanford-fox-2016/regular-expressions.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blanford-fox-2016/regular-expressions/issues"
+  },
+  "homepage": "https://github.com/blanford-fox-2016/regular-expressions#readme"
+}
